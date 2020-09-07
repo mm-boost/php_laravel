@@ -42,7 +42,7 @@
                     <!--{{ url('/') }}   url(“パス”)は、そのまんまURLを返すメソッドです。-->
                     <a class="navbar-brand" href="{{ url('/') }}">
                     <!--{{ config('app.name', 'Laravel') }}
-                    assetと似たような関数で、configフォルダのapp.phpの中にあるnameにアクセスをします。
+                    assetと���たような関数で、configフォルダのapp.phpの中にあるnameにアクセスをします。
                     基本的にはアプリケーションの名前「Laravel」が格納されています。-->
                         {{ config('app.name', 'Laravel') }}
                     </a>
@@ -58,9 +58,12 @@
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                              <!-- Authentication Links -->
+                             
                         {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
-                        @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                        @guest  <!-- ユーザーログイン認証の判別に使用する -->
+                        
+                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li><!-- ヘルパ関数　＿＿（）翻訳文字列取得 --> 
+                                                                                                                   <!-- route関数 URLを生成、リダイレクト。今回は”/login”URLを生成　-->
                         {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
                         @else
                             <li class="nav-item dropdown">
@@ -72,7 +75,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('messages.Logout') }} <!-- ヘルパ関数　＿＿（）翻訳文字列取得 --> 
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -80,7 +83,7 @@
                                     </form>
                                 </div>
                             </li>
-                            @endguest
+                            @endguest <!-- ユーザーログイン認証の判別に使用する -->
 
                         </ul>
                     </div>
