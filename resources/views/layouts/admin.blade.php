@@ -41,10 +41,9 @@
                 <div class="container">
                     <!--{{ url('/') }}   url(“パス”)は、そのまんまURLを返すメソッドです。-->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                    <!--{{ config('app.name', 'Laravel') }}
-                    assetと���たような関数で、configフォルダのapp.phpの中にあるnameにアクセスをします。
-                    基本的にはアプリケーションの名前「Laravel」が格納されています。-->
                         {{ config('app.name', 'Laravel') }}
+                        <!--assetと似たような関数で、configフォルダのapp.phpの中にあるnameにアクセスをします。
+                    基本的にはアプリケーションの名前「Laravel」が格納されています。-->
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
