@@ -11,4 +11,6 @@ class News extends Model
         'title' => 'required',
         'body' => 'required',
     );
+    
+    protected $fillable = ['title','body']; //更新しても良い項目を指定する
 }
