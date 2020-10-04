@@ -13,5 +13,10 @@ class Profile extends Model
         'hobby' => 'required',
         'introduction' => 'required',
     );
-    protected $fillable = ['name','gender','hobby','introduction']; 
+    protected $fillable = ['name','gender','hobby','introduction']; //更新しても良い項目を指定する
+    
+    public function profile_histories()
+    {
+        return $this->hasMany('App\ProfileHistory');
+    }
 }
